@@ -2,7 +2,7 @@
 
 from __future__ import absolute_import
 from datetime import date, datetime  # noqa: F401
-
+import re
 from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
@@ -108,8 +108,8 @@ class CarDetail(Model):
         """
         if registration is None:
             raise ValueError("Invalid value for `registration`, must not be `None`")  # noqa: E501
-        if registration is not None and not re.search(r'^[A-Z]{2}-\\d{3}-[A-Z]{2}$', registration):  # noqa: E501
-            raise ValueError("Invalid value for `registration`, must be a follow pattern or equal to `/^[A-Z]{2}-\\d{3}-[A-Z]{2}$/`")  # noqa: E501
+        if registration is not None and not re.search(r'^[A-Z]{2}-\d{3}-[A-Z]{2}$', registration):  # noqa: E501
+            raise ValueError("Invalid value for `registration`, must be a follow pattern or equal to `/^[A-Z]{2}-\d{3}-[A-Z]{2}$/`")  # noqa: E501
 
         self._registration = registration
 
