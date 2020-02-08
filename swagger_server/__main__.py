@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import connexion
+import yaml
 
 from swagger_server import encoder
 from .db import close_db
@@ -13,6 +14,9 @@ def create_app():
     flask_instance.json_encoder = encoder.JSONEncoder
     flask_instance.teardown_appcontext(close_db)
     
+    with (app.specification_dir / 'garage.openapi.yml').open('rt') as file:
+        flask_instance.config['OPENAPI'] = yaml.load(file, Loader=yaml.FullLoader)
+
     app.add_api('garage.openapi.yml', arguments={'title': 'Garage'})
     return app
 
