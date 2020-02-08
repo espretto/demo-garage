@@ -6,9 +6,12 @@ from swagger_server import encoder
 
 
 def create_app():
-    app = connexion.App(__name__, specification_dir='./spec/')
-    app.app.json_encoder = encoder.JSONEncoder
-    app.add_api('garage.openapi.yml', arguments={'title': 'Stompyt Garage'})
+    app = connexion.FlaskApp(__name__, specification_dir='./spec/')
+    
+    flask_instance = app.app
+    flask_instance.json_encoder = encoder.JSONEncoder
+    
+    app.add_api('garage.openapi.yml', arguments={'title': 'Garage'})
     return app
 
 
