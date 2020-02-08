@@ -3,6 +3,7 @@
 import connexion
 
 from swagger_server import encoder
+from .db import close_db
 
 
 def create_app():
@@ -10,6 +11,7 @@ def create_app():
     
     flask_instance = app.app
     flask_instance.json_encoder = encoder.JSONEncoder
+    flask_instance.teardown_appcontext(close_db)
     
     app.add_api('garage.openapi.yml', arguments={'title': 'Garage'})
     return app
