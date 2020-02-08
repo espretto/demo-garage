@@ -47,3 +47,15 @@ docker build -t swagger_server .
 # starting up a container
 docker run -p 8080:8080 swagger_server
 ```
+
+## Troublshooting
+
+Upon launching the server `python -m swagger_server` you get the following warning:
+```
+ImportError: cannot import name 'FileStorage'
+```
+The fix is already under way in package `connexion@1.1.16`. Quick fix it in python's `lib/site-packages/connexion/decorators/validation.py` with the following
+```diff
+- from werkzeug import FileStorage
++ from werkzeug.datastructures import FileStorage
+```
