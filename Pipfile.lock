@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4b774ebe8c6cd015921535304286843dbcf1da0102692996fc852f6aa61e1468"
+            "sha256": "54882e52cf5b3d220afb5d7b24e7002580230999f9fc6618a190efb51cca5b48"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -53,11 +53,11 @@
         },
         "connexion": {
             "hashes": [
-                "sha256:559c5ae35f02aeda85f1326d8d8406c4dfde104f66230c0593f0df74bebffa4a",
-                "sha256:5dd022488438f4b75d8fa0435cd95b402f1bce1a6bb3599a0d568ba2c3e70afe"
+                "sha256:4973ba0d89fdccee0a7d9cbe2fdc099b9a3a32134d0587cdf50705abf2001000",
+                "sha256:59ce1475cc9df88c6e392d08d32e7cb48b926a5c0b1eb98ec724dde7d1ba82e5"
             ],
             "index": "pypi",
-            "version": "==1.1.15"
+            "version": "==1.1.16"
         },
         "flask": {
             "hashes": [
@@ -146,6 +146,12 @@
             ],
             "version": "==1.1.1"
         },
+        "pathlib": {
+            "hashes": [
+                "sha256:6940718dfc3eff4258203ad5021090933e5c04707d5ca8cc9e73c94a7894ea9f"
+            ],
+            "version": "==1.0.1"
+        },
         "pyrsistent": {
             "hashes": [
                 "sha256:cdc7b5e3ed77bed61270a47d35434a30617b9becdf2478af76ad2c6ade307280"
@@ -197,6 +203,14 @@
                 "sha256:62ef22eca3f429d93fddda5d793d2a1a9057d3732e7a14606e641805326ae4a6"
             ],
             "version": "==2.4.3"
+        },
+        "typing": {
+            "hashes": [
+                "sha256:91dfe6f3f706ee8cc32d38edbbf304e9b7583fb37108fef38229617f8b3eba23",
+                "sha256:c8cabb5ab8945cd2f54917be357d134db9cc1eb039e59d1606dc1e60cb1d9d36",
+                "sha256:f38d83c5a7a7086543a0f649564d661859c5146a85775ab90c0d2f93ffaa9714"
+            ],
+            "version": "==3.7.4.1"
         },
         "urllib3": {
             "hashes": [
