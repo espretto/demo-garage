@@ -57,6 +57,7 @@ python -m database
 
 ## Troublshooting
 
+### Faulty dependencies
 Upon launching the server `python -m swagger_server` you get the following warning:
 ```
 ImportError: cannot import name 'FileStorage'
@@ -66,3 +67,10 @@ The fix is already under way in package `connexion@1.1.16`. Quick fix it in pyth
 - from werkzeug import FileStorage
 + from werkzeug.datastructures import FileStorage
 ```
+
+### Enforce Foreign Keys
+Sqlite does not enforce foreign keys by default. The setting can be changed using the following command:
+```sql
+PRAGMA foreign_keys = ON;
+```
+However, the sqlite installation needs to have been compiled with certain flags (see the [docs](https://sqlite.org/foreignkeys.html)) for the setting to persist and take effect. To circumvent this shortcoming, the above command can be issued with every new connection.

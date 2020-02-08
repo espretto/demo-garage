@@ -12,6 +12,12 @@ def get_db():
         g.db = sqlite3.connect(DB_FILEPATH)
         g.db.row_factory = sqlite3.Row
 
+        # enforce foreign key constraints for this connection
+        # unfortunately this setting does not persist and has
+        # to be renewed on every connection
+        with g.db as con:
+            con.execute('PRAGMA foreign_keys=ON')
+    
     return g.db
 
 
