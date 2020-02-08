@@ -7,7 +7,6 @@ info:
   license:
     name: "MIT"
     url: "https://github.com/espretto/demo-garage/LICENCE"
-host: "espretto.ddns.net"
 basePath: "/garage/api/1.0.0"
 schemes:
 - "http"
