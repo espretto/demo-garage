@@ -1,0 +1,18 @@
+
+CREATE TABLE IF NOT EXISTS `garage` (
+  `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  `name` TEXT NOT NULL,
+  `address` TEXT NOT NULL,
+  `date_created` DATETIME NOT NULL,
+  `max_capacity` INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `car` (
+  `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  `registration` TEXT NOT NULL UNIQUE,
+  `brand` TEXT NOT NULL,
+  `model` TEXT NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
+  `garage_id` INTEGER,
+  FOREIGN KEY(`garage_id`) REFERENCES garage(`id`) ON DELETE CASCADE
+);

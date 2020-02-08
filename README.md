@@ -48,6 +48,13 @@ docker build -t swagger_server .
 docker run -p 8080:8080 swagger_server
 ```
 
+## Database Management
+
+To [re]create the sqlite database issue the following command from the project root:
+```sh
+python -m database
+```
+
 ## Troublshooting
 
 Upon launching the server `python -m swagger_server` you get the following warning:
